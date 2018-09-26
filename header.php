@@ -14,32 +14,27 @@
 </head>
 <body>
 	<div class="header">
-		<div class="navbar navbar-default">
-			<div class="container-fluid">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="<?php echo home_url(); ?>">
-						<img alt="<?php echo get_bloginfo('name'); ?>" src="<?php echo IMAGES; ?>/logo.png">
-					</a>
-				</div>
-
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<?php wp_nav_menu(array(
-					'theme_location'=>'navigation-menu',
-					'depth'             => 2,
-					'container'         => 'div',
-					'container_class'   => 'collapse navbar-collapse',
-					'container_id'      => 'navbar-collapse-1',
-					'menu_class'        => 'nav navbar-nav',
-					'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-					'walker'            => new wp_bootstrap_navwalker()
-				)); ?>
-			</div>
-		</div>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <a class="navbar-brand" href="<?php echo home_url(); ?>">
+		  	<?php if(file_exists(IMAGES . '/logo.png')): ?>
+		  		<img alt="<?php echo get_bloginfo('name'); ?>" src="<?php echo IMAGES; ?>/logo.png">
+		  	<?php else:
+				echo get_bloginfo('name');
+		  	endif; ?>
+		  </a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-1" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+	      <?php wp_nav_menu(array(
+				'theme_location'=>'navigation-menu',
+				'depth'             => 2,
+				'container'         => 'div',
+				'container_class'   => 'collapse navbar-collapse',
+				'container_id'      => 'navbar-1',
+				'menu_class'        => 'navbar-nav mr-auto',
+				'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+				'walker'            => new bs4Navwalker()
+			)); ?>
+		  </div>
+		</nav>
 	</div>

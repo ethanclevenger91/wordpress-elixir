@@ -2,12 +2,10 @@
 
 define('THEME_ROOT', get_stylesheet_directory_uri());
 define('THEME_PATH', get_stylesheet_directory());
-define('IMAGES', THEME_ROOT . '/build/img');
-define('IMAGES_PATH', THEME_PATH . '/build/img');
-define('SCRIPTS', THEME_ROOT . '/build/js');
-define('SCRIPTS_PATH', THEME_PATH . '/build/js');
-define('STYLES', THEME_ROOT . '/build/css');
-define('STYLES_PATH', THEME_PATH . '/build/css');
+define('IMAGES', THEME_ROOT . '/dist/img');
+define('IMAGES_PATH', THEME_PATH . '/dist/img');
+define('DIST', THEMEROOT . '/dist');
+define('DIST_PATH', THEMEPATH . '/dist');
 define('THEME_PREFIX', 'wordpress-elixir');
 
 require_once('includes/WP_Bootstrap_Navwalker.php');
@@ -44,9 +42,8 @@ class WordPressElixirTheme
 
     public static function wp_enqueue_scripts()
     {
-        wp_enqueue_script('jquery');
-        wp_enqueue_script(THEME_PREFIX.'-scripts', SCRIPTS . '/main.js', ['jquery'], filemtime(SCRIPTS_PATH.'/main.js'));
-        wp_enqueue_style(THEME_PREFIX.'-styles', STYLES . '/main.css', [], filemtime(STYLES_PATH.'/main.css'));
+        wp_enqueue_script(THEME_PREFIX.'-scripts', DIST . '/app.js', [], filemtime(DIST_PATH.'/app.js'));
+        wp_enqueue_style(THEME_PREFIX.'-styles', DIST . '/app.css', [], filemtime(DIST_PATH.'/app.css'));
     }
 
     public static function menus_image_sizes()
