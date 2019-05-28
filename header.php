@@ -22,7 +22,7 @@
 				echo get_bloginfo('name');
 		  	endif; ?>
 		  </a>
-		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-1" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav-1" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
 	      <?php wp_nav_menu(array(
@@ -30,7 +30,7 @@
 				'depth'             => 2,
 				'container'         => 'div',
 				'container_class'   => 'collapse navbar-collapse',
-				'container_id'      => 'navbar-1',
+				'container_id'      => 'navbar-nav-1',
 				'menu_class'        => 'navbar-nav mr-auto',
 				'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
 				'walker'            => new bs4Navwalker()
