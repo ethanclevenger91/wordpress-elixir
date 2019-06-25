@@ -69,7 +69,7 @@ If you like to break your own Javascript into multiple files, you can include th
 `require('./maps.js')`
 
 #### A note about jQuery libraries/extensions
-Some libraries, including jQuery libraries or extensions like [slick](http://kenwheeler.github.io/slick/), depend on the global jQuery. For compatibility's sake, we want our theme to still depend on WordPress's bundled jQuery. To ensure such libraries can find your global vars, consider updating `webpack.mix.js` to take advantage of [Mix's autoloading feature](https://laravel-mix.com/docs/4.0/autoloading).
+To ensure maximum compatibility between this theme and other WordPress tools, enqueue WordPress's bundled jQuery if you need it. This theme configures Webpack to play nicely with the global jQuery.
 
 ### BrowserSync
 [See Mix's documentation](https://laravel-mix.com/docs/4.0/browsersync).
