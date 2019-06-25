@@ -12,6 +12,14 @@ let mix = require('laravel-mix');
  */
 
 mix.setPublicPath('')
+	.webpackConfig({
+		externals: {
+			jquery: 'jQuery'
+		}
+	})
+	.autoload({
+		jquery: ['$', 'window.jQuery']
+	})
 	.js('js/app.js', 'dist/')
 	.sass('sass/app.scss', 'dist/')
 	.sourceMaps();
