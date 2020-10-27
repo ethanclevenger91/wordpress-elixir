@@ -29,7 +29,7 @@ Either of these can be replaced or removed entirely. See your `package.json` and
 - Run `npm install`
 
 ### Installation with Composer
-This theme makes use of [`composer/installers`](https://github.com/composer/installers) and its defined WordPress spec. The theme can therefore be installed using `composer require webspec-design/wordpress-elixir` and it will make its way to `wp-content/themes`. However, the theme should be forked following this, or a `composer update` will overwrite your changes. Either remove it from your `composer.json` and `composer.lock` or rename the theme's directory to avoid this.
+This theme makes use of [`composer/installers`](https://github.com/composer/installers) and its defined WordPress spec. The theme can therefore be installed using `composer require ethanclevenger91/wordpress-mix` and it will make its way to `wp-content/themes`. However, the theme should be forked following this, or a `composer update` will overwrite your changes. Either remove it from your `composer.json` and `composer.lock` or rename the theme's directory to avoid this.
 
 ## Mix
 
