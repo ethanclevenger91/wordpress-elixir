@@ -1,6 +1,6 @@
 <?php
 
-namespace SternerStuff\WordPressMix;
+namespace App\Theme;
 
 define('THEME_ROOT', get_stylesheet_directory_uri());
 define('THEME_PATH', get_stylesheet_directory());
@@ -42,11 +42,4 @@ function menus_image_sizes()
 
     //Fullscreen image
     add_image_size('fullscreen', 1920, 1080);
-}
-
-function image($id, $size='', $icon='', $attr=[])
-{
-    $img = wp_get_attachment_image($id, $size, $icon, $attr);
-    $img = preg_replace('/(width|height)="\d*"\s/', "", $img);
-    return $img;
 }
